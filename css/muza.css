@@ -480,3 +480,14 @@ textarea.input-text{
 }
 
 
+
+/* SYLWETKASYLWETKASYLWETKASYLWETKASYLWETKA           WIZYTOWKA        SYLWETKASYLWETKASYLWETKASYLWETKASYLWETKASYLWETKASYLWETKASYLWETKA*/
+
+.wizyt{
+	margin: 30px 0px;
+	height: 250px;
+	background: black;
+}
+.wizyt h1{
+	color: white;
+}
