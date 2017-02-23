@@ -483,11 +483,59 @@ textarea.input-text{
 
 /* SYLWETKASYLWETKASYLWETKASYLWETKASYLWETKA           WIZYTOWKA        SYLWETKASYLWETKASYLWETKASYLWETKASYLWETKASYLWETKASYLWETKASYLWETKA*/
 
-.wizyt{
+.wizyt1{
 	margin: 30px 0px;
-	height: 250px;
-	background: black;
+
+    background: #333;
+    border: 10px solid black;
+    padding: 5px;
+    color: white;
 }
-.wizyt h1{
-	color: white;
+.wizyt1 h1{
+	font-size: 22px;
+}
+.wizyt1 p{
+	font-size: 18px;
+	text-align: center;
+	padding: 60px 0px;
+}
+
+.wizyt1 h2{
+	border-bottom: 4px solid black;
+	text-align: left;
+	font-size: 23px;
+}
+.wizyt2{
+	margin: 30px 0px;
+    background: #1e5084;
+    border: 10px solid #00446b;
+    padding: 10px;
+    color: white;
+}
+
+.wizyt2 h1{
+	font-size: 22px;
+}
+.wizyt2 p{
+	font-size: 18px;
+	text-align: center;
+	padding: 60px 0px;
+}
+
+.wizyt2 h2{
+	border-bottom: 4px solid #00446b;
+	text-align: left;
+	font-size: 23px;
+}
+.chivo{
+	font-family: 'Chivo', sans-serif;
+}
+.cousine{
+	font-family: 'Cousine', sans-serif;
+}
+.coda{
+	font-family: 'Coda', sans-serif;
+}
+.cuprum{
+	font-family: 'Cuprum', sans-serif;
 }

@@ -20,6 +20,13 @@
   <link href='http://fonts.googleapis.com/css?family=Coda&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+
+
+  <link href='http://fonts.googleapis.com/css?family=Cuprum&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Cousine&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Chivo&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Coda&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <![endif]-->
@@ -83,14 +90,14 @@
 					<div class="col-md-6">
 						<select class="input-text" name="czcionka" id="czcionka">
 							<option>Wybierz czcionkę</option>
-							<option value="chivo">Chivo</option>
-							<option value="coda">Coda</option>
-							<option value="cousine">Cousine</option>
-							<option value="cuprum">Cuprum</option>
+							<option class="chivo" value="chivo">Chivo</option>
+							<option class="coda" value="coda">Coda</option>
+							<option class="cousine" value="cousine">Cousine</option>
+							<option class="cuprum" value="cuprum">Cuprum</option>
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="input-text" name="czcionka" id="czcionka">
+						<select class="input-text" name="motyw" id="motyw">
 							<option>Wybierz motyw graficzny</option>
 							<option value="1motyw">Niebiesko-granatowy</option>
 							<option value="2motyw">Szaro-czarny</option>
@@ -135,9 +142,11 @@ $miasto = $_POST['miasto'];
 $ulica = $_POST['ulica'];
 
 $telefon = $_POST['telefon'];
+
+$motyw = $_POST['motyw'];
+
+$czcionka = $_POST['czcionka'];
 }
-
-
 ?>
 
 
@@ -145,21 +154,54 @@ $telefon = $_POST['telefon'];
 	<div class="container">
 		<div class="col-md-3"></div>
 
-			<div class="wizyt col-md-6">
+			<div class="
+
+<?php 
+if ($motyw == "1motyw") {
+	echo " wizyt2 ";
+} 
+	 if ($motyw == "2motyw") {
+		echo " wizyt1" ;
+	}
+
+ if ($czcionka == "chivo") {
+	echo " chivo ";
+}
+	 if ($czcionka == "coda") {
+		echo " coda ";
+	}
+		 if ($czcionka == "cousine") {
+			echo " cousine ";
+		}
+			 if ($czcionka == "cuprum") {
+				echo " cuprum ";
+			}
+
+?>
+			 col-md-6">
 				<div class="row">
 					<div class="col-md-6">
 						<h1>
-							<?php if (isset($_POST['imie'])) { echo "$imie"; } if (isset($_POST['nazwisko'])) { echo "$nazwisko"; } ?> <br>
-							Lat, <?php if (isset($_POST['wiek'])) { echo "$wiek"; } ?>
+							<?php if (isset($_POST['imie'])) { echo "$imie "; } if (isset($_POST['nazwisko'])) { echo "$nazwisko"; } ?> <br>
+							<?php if (isset($_POST['wiek'])) { echo "$wiek"; } ?>
 						</h1>
 					</div>
 					<div class="col-md-6">
 						<h2>
-							<?php if (isset($_POST['miasto'])) { echo "$miasto"; } ?>, <?php if (isset($_POST['ulica'])) { echo "$ulica"; } ?> <br>
+							<?php if (isset($_POST['miasto'])) { echo "$miasto, "; }?> <br>
 							<?php if (isset($_POST['ulica'])) { echo "$ulica"; } ?> <br>
-							<?php if (isset($_POST['telefon'])) { echo "$telefon"; } ?>
+							<?php if (isset($_POST['telefon'])) { echo "Tel: $telefon"; } ?>
 						</h2>
 					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<img src="images/anonymous.jpg" alt="" class="img-thumbnail ">
+					</div>
+					<div class="col-md-8">
+						<p>Zapraszam do kontaktu!</p>
+					</div>
+					
 				</div>
 			</div>
 
