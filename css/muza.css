@@ -539,3 +539,16 @@ textarea.input-text{
 .cuprum{
 	font-family: 'Cuprum', sans-serif;
 }
+
+tr.srodek th{
+	border: 1px solid black;
+	text-align: center;
+	margin:5px;
+}
+tbody.srodekk tr th{
+	text-align: center;
+	border: 1px solid black;
+}
+tbody.srodekk tr{
+	    outline: 1px solid black;
+}
