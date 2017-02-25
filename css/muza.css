@@ -460,6 +460,7 @@ textarea.input-text{
     overflow:auto;
 }
 .input-btn{
+	text-decoration: none;
 	padding: 10px 40px;
     background:#fff;
     color:#333;
@@ -469,8 +470,11 @@ textarea.input-text{
     transition:all 0.3s ease-in-out;
     -moz-transition:all 0.3s ease-in-out;
     -webkit-transition:all 0.3s ease-in-out;
+
+
 }
 .input-btn:hover{
+	text-decoration: none;
     border: 1px solid #333; 
     background: #333;
     color: white;
