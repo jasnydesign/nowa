@@ -81,7 +81,7 @@
 						<div class="col-md-4"><img src="http://www.matmana6.pl/zdjecia/szkola_srednia/geometria_w_przestrzeni_stereometria/szescian_39.png" alt=""></div>
 					</div>
 					
-				<div class="niewidok">
+				<div class="niewidok" style="display:none;">
 					<h1 class="text-center">Etap 1</h1>
 					<h2>Jaka bryła Ciebie interesuje?</h2>
 
@@ -130,7 +130,7 @@
 						<div class="col-md-4"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Cylinder_geometry.svg/150px-Cylinder_geometry.svg.png" alt=""></div>
 					</div>
 					
-				<div class="niewidok">
+				<div class="niewidok" style="display:none;">
 					<h1 class="text-center">Etap 1</h1>
 					<h2>Jaka bryła Ciebie interesuje?</h2>
 
@@ -179,7 +179,7 @@
 					</div>
 					
 
-				<div class="niewidok">
+				<div class="niewidok" style="display:none;">
 					<h1 class="text-center">Etap 1</h1>
 					<h2>Jaka bryła Ciebie interesuje?</h2>
 

@@ -96,7 +96,7 @@
 				</div>				
 			</div>
 				<form method="post" action="lista2zad3e5.php">
-					<div class="niewidok">
+					<div class="niewidok" style="display:none;">
 						<h1 class="text-center">Etap 1</h1>
 						<h2>Jaka bryła Ciebie interesuje?</h2>
 
@@ -143,7 +143,7 @@
 						Wzór na objętość <b>walca</b> kołowego prostego:: <br><br>
 						<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d8bd67a020846f624067fbda5d0894b2db162edc" alt=""><br><br>
 						a więc, <br>
-						<h3><b>3.14*<?php echo $_POST['walecr']; ?>*<?php echo $_POST['walecr'] ?>*<?php echo $_POST['walech'] ?>=<?php echo 3.14*$_POST['walecr']*$_POST['walecr']*$_POST['walech'] ?></b></h3> <br>
+						<h3><b>3.14*<?php echo $_POST['walecr']; ?>*<?php echo $_POST['walecr'] ?>*<?php echo $_POST['walech'] ?>=<?php echo 3.14*$_POST['walecr']*$_POST['walecr']*$_POST['walech']; ?></b></h3> <br>
 						Objętośc szescianu o wymiarach które podałeś to <b><?php echo 3.14*$_POST['walecr']*$_POST['walecr']*$_POST['walech'] ?></b>.
 
 					</p>					
@@ -170,7 +170,7 @@
 
 
 				<form method="post" action="lista2zad3e5.php">
-					<div class="niewidok">
+					<div class="niewidok" style="display:none;">
 						<h1 class="text-center">Etap 1</h1>
 						<h2>Jaka bryła Ciebie interesuje?</h2>
 
@@ -215,8 +215,8 @@
 						Wzór na <b>Objętość</b> stożka: <br><br>
 						<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ce90df4ba09ff36ec499a332ad1e5b57dfb4c1c4" alt=""><br><br>
 						podstawa to koło a więc, <br>
-						<h3><b>(1/3)*3.14*<?php echo $_POST['stozekr']; ?>*<?php echo $_POST['stozekr'] ?>*<?php echo $_POST['stozekh'] ?>=<?php echo (1/3)*3.14*$_POST['stozekr']*$_POST['stozekr']*$_POST['stozekh'] ?></b></h3> <br>
-						Objętośc stożka o wymiarach które podałeś to <b><?php echo (1/3)*3.14*$_POST['stozekr']*$_POST['stozekr']*$_POST['stozekh'] ?></b>.
+						<h3><b>(1/3)*3.14*<?php echo $_POST['stozekr']; ?>*<?php echo $_POST['stozekr'] ?>*<?php echo $_POST['stozekh'] ?>=<?php echo (1/3)*3.14*$_POST['stozekr']*$_POST['stozekr']*$_POST['stozekh']; ?></b></h3> <br>
+						Objętośc stożka o wymiarach które podałeś to <b><?php echo (1/3)*3.14*$_POST['stozekr']*$_POST['stozekr']*$_POST['stozekh']; ?></b>.
 
 					</p>					
 				</div>
@@ -226,9 +226,9 @@
 						<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e322f11f30c102efebf6931d30585e37222d8583" alt=""> <br>
 						<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/167186d8737673fb253f6bf8816b11b91b8be581" alt=""><br><br>
 						a więc, <br>
-						<h3><b>3.14*<?php echo $_POST['stozekr']; ?>*<?php echo $_POST['stozekr'] ?>*<?php echo $_POST['stozekh'] ?>+3.14*<?php echo $_POST['stozekr'] ?>*<?php echo $_POST['stozekl'] ?>=<?php echo 3.14*$_POST['stozekr']*$_POST['stozekr']*$_POST['stozekh']+3.14*$_POST['stozekr']*$_POST['stozekl']; ?></b></h3><br>
+						<h3><b>3.14*<?php echo $_POST['stozekr']; ?>*<?php echo $_POST['stozekr'] ?>*<?php echo $_POST['stozekh'] ?>+3.14*<?php echo $_POST['stozekr'] ?>*<?php echo $_POST['stozekl'] ?>=<?php echo 3.14*($_POST['stozekr']*$_POST['stozekr'])+3.14*$_POST['stozekr']*$_POST['stozekl']; ?></b></h3><br>
 
-						Pole powierzchni całkowitej o wymiarach które podałeś wynosi <b><?php echo 3.14*$_POST['stozekr']*$_POST['stozekr']*$_POST['stozekh']+3.14*$_POST['stozekr']*$_POST['stozekl']; ?></b>.
+						Pole powierzchni całkowitej o wymiarach które podałeś wynosi <b><?php echo 3.14*$_POST['stozekr']*($_POST['stozekr']+$_POST['stozekl']); ?></b>.
 					</p>
 				</div>				
 			</div>
@@ -242,7 +242,7 @@
 
 
 				<form method="post" action="lista2zad3e5.php">
-					<div class="niewidok">
+					<div class="niewidok" style="display:none;">
 						<h1 class="text-center">Etap 1</h1>
 						<h2>Jaka bryła Ciebie interesuje?</h2>
 

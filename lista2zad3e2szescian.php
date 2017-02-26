@@ -105,7 +105,7 @@
 
 			<form method="post" action="lista2zad3e3.php">
 
-				<div class="niewidok">
+				<div class="niewidok" style="display:none;">
 					<h1 class="text-center">Etap 1</h1>
 					<h2>Jaka bryła Ciebie interesuje?</h2>
 
@@ -181,7 +181,7 @@ Wzór na objętość walca kołowego prostego:<br><br>
 
 			<form method="post" action="lista2zad3e3.php">
 
-				<div class="niewidok">
+				<div class="niewidok" style="display:none;">
 					<h1 class="text-center">Etap 1</h1>
 					<h2>Jaka bryła Ciebie interesuje?</h2>
 
@@ -268,7 +268,7 @@ gdzie l - tworząca, r - promień podstawy stożka.
 
 			<form method="post" action="lista2zad3e3.php">
 
-				<div class="niewidok">
+				<div class="niewidok" style="display:none;">
 					<h1 class="text-center">Etap 1</h1>
 					<h2>Jaka bryła Ciebie interesuje?</h2>
 
