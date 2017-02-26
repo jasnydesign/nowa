@@ -81,8 +81,24 @@
 						<div class="col-md-4"><img src="http://www.matmana6.pl/zdjecia/szkola_srednia/geometria_w_przestrzeni_stereometria/szescian_39.png" alt=""></div>
 					</div>
 					
+				<div class="niewidok">
+					<h1 class="text-center">Etap 1</h1>
+					<h2>Jaka bryła Ciebie interesuje?</h2>
 
-				    <input class="input-btn" type="submit" name="submit" value="Wyślij">
+					<div class="btn-group btn-group-justified " data-toggle="buttons">
+					  <label class=" btn btn-primary active">
+					    <input type="radio" name="options" id="option1" value="option1" autocomplete="off" checked> Sześcian
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option2" value="option2" autocomplete="off" > Walec
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option3" value="option3" autocomplete="off" > Stożek
+					  </label>
+					</div>					
+				</div>
+
+				    <input class="input-btn" type="submit" name="submit" value="Przejdź do etapu 4">
 				          
 				</form>
 			</div>
@@ -114,8 +130,24 @@
 						<div class="col-md-4"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Cylinder_geometry.svg/150px-Cylinder_geometry.svg.png" alt=""></div>
 					</div>
 					
+				<div class="niewidok">
+					<h1 class="text-center">Etap 1</h1>
+					<h2>Jaka bryła Ciebie interesuje?</h2>
 
-				    <input class="input-btn" type="submit" name="submit" value="Wyślij">
+					<div class="btn-group btn-group-justified " data-toggle="buttons">
+					  <label class=" btn btn-primary active">
+					    <input type="radio" name="options" id="option1" value="option1" autocomplete="off" > Sześcian
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option2" value="option2" autocomplete="off" checked> Walec
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option3" value="option3" autocomplete="off" > Stożek
+					  </label>
+					</div>					
+				</div>
+				
+				    <input class="input-btn" type="submit" name="submit" value="Przejdź do etapu 4">
 				          
 				</form>
 			</div>
@@ -147,7 +179,24 @@
 					</div>
 					
 
-				    <input class="input-btn" type="submit" name="submit" value="Wyślij">
+				<div class="niewidok">
+					<h1 class="text-center">Etap 1</h1>
+					<h2>Jaka bryła Ciebie interesuje?</h2>
+
+					<div class="btn-group btn-group-justified " data-toggle="buttons">
+					  <label class=" btn btn-primary active">
+					    <input type="radio" name="options" id="option1" value="option1" autocomplete="off" > Sześcian
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option2" value="option2" autocomplete="off" > Walec
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option3" value="option3" autocomplete="off" checked> Stożek
+					  </label>
+					</div>					
+				</div>
+				
+				    <input class="input-btn" type="submit" name="submit" value="Przejdź do etapu 4">
 				          
 				</form>
 			</div>

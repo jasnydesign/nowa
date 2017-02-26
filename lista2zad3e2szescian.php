@@ -103,8 +103,29 @@
 					</p>
 
 
+			<form method="post" action="lista2zad3e3.php">
 
-	<a class="input-btn" href="lista2zad3e3.php">Przejdź do etapu 3</a>
+				<div class="niewidok">
+					<h1 class="text-center">Etap 1</h1>
+					<h2>Jaka bryła Ciebie interesuje?</h2>
+
+					<div class="btn-group btn-group-justified " data-toggle="buttons">
+					  <label class=" btn btn-primary active">
+					    <input type="radio" name="options" id="option1" value="option1" autocomplete="off" checked> Sześcian
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option2" value="option2" autocomplete="off" > Walec
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option3" value="option3" autocomplete="off" > Stożek
+					  </label>
+					</div>					
+				</div>
+
+
+	    	<input class="input-btn" type="submit" name="submit" value="Przejdź do etapu 3">
+		          
+			</form>
 
 		</div>	
 	</section>
@@ -158,7 +179,29 @@ Wzór na objętość walca kołowego prostego:<br><br>
 
 
 
-	<a class="input-btn" href="lista2zad3e3.php">Przejdź do etapu 3</a>
+			<form method="post" action="lista2zad3e3.php">
+
+				<div class="niewidok">
+					<h1 class="text-center">Etap 1</h1>
+					<h2>Jaka bryła Ciebie interesuje?</h2>
+
+					<div class="btn-group btn-group-justified " data-toggle="buttons">
+					  <label class=" btn btn-primary active">
+					    <input type="radio" name="options" id="option1" value="option1" autocomplete="off" > Sześcian
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option2" value="option2" autocomplete="off" checked> Walec
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option3" value="option3" autocomplete="off" > Stożek
+					  </label>
+					</div>					
+				</div>
+
+
+	    	<input class="input-btn" type="submit" name="submit" value="Przejdź do etapu 3">
+		          
+			</form>
 
 		</div>	
 	</section>
@@ -223,7 +266,29 @@ gdzie l - tworząca, r - promień podstawy stożka.
 
 
 
-	<a class="input-btn" href="lista2zad3e3.php">Przejdź do etapu 3</a>
+			<form method="post" action="lista2zad3e3.php">
+
+				<div class="niewidok">
+					<h1 class="text-center">Etap 1</h1>
+					<h2>Jaka bryła Ciebie interesuje?</h2>
+
+					<div class="btn-group btn-group-justified " data-toggle="buttons">
+					  <label class=" btn btn-primary active">
+					    <input type="radio" name="options" id="option1" value="option1" autocomplete="off" > Sześcian
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option2" value="option2" autocomplete="off"> Walec
+					  </label>
+					  <label class=" btn btn-primary">
+					    <input type="radio" name="options" id="option3" value="option3" autocomplete="off" checked> Stożek
+					  </label>
+					</div>					
+				</div>
+
+
+	    	<input class="input-btn" type="submit" name="submit" value="Przejdź do etapu 3">
+		          
+			</form>
 
 		</div>	
 	</section>
