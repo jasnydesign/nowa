@@ -566,3 +566,31 @@ tbody.srodekk tr{
 .niewidok{
 	display: none !important;
 }
+
+label.btn.btn-primary{
+	padding: 20px;
+	color: black;
+	background: white !important;
+	border: 1px solid black !important;
+	border-radius: 0px !important;
+	transition: all .3s;
+}
+
+label.btn.btn-primary:hover{
+	padding: 20px;
+	color: white;
+	background: black !important;
+	border: 1px solid black !important;
+	border-radius: 0px !important;
+}
+
+label.btn.btn-primary.active{
+	padding: 20px;
+	color: white;
+	background: black !important;
+	border: 1px solid black !important;
+	border-radius: 0px !important;
+}
+img.zd{
+	padding: 50px;
+}

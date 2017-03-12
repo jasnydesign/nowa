@@ -91,14 +91,14 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<img class="center-block img-responsive" src="http://www.matmana6.pl/zdjecia/szkola_srednia/geometria_w_przestrzeni_stereometria/szescian_39.png" alt="">
+						<img class="center-block img-responsive zd" src="http://www.matmana6.pl/zdjecia/szkola_srednia/geometria_w_przestrzeni_stereometria/szescian_39.png" alt="">
 					</div>
 
 					<div class="col-md-4">
-						<img class="center-block img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Cylinder_geometry.svg/150px-Cylinder_geometry.svg.png" alt="">
+						<img class="center-block img-responsive zd" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Cylinder_geometry.svg/150px-Cylinder_geometry.svg.png" alt="">
 					</div>
 					<div class="col-md-4">
-						<img class="center-block img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Stozek_schemat.svg/200px-Stozek_schemat.svg.png" alt="">
+						<img class="center-block img-responsive zd" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Stozek_schemat.svg/200px-Stozek_schemat.svg.png" alt="">
 					</div>
 				</div>
 

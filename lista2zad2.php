@@ -93,7 +93,7 @@
 	<div class="container">
 
        
-             
+             <?php if (isset($_POST['wiersz'])) { ?>
 
 					<table class="pnl results spacja">
 
@@ -144,7 +144,7 @@
 
 					</table>
        
-
+<?php } ?>
 
 
 		</div>
