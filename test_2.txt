@@ -3,13 +3,19 @@ Ogólne;Osram;Super lampa;blablbabsa;	122 zł	;a
 Miejscowe;Lemir;Żaróweczka;blabablab;	2 zł	;b
 Ozdobne;Hesmo;Reflektor;balbablalbalbl;	3 zł	;c
 Miejscowe;Osram;Żaróweczka;blabablab;	12 zł	;b
+Szamanie;Lemir;Super lampa;blablbabsa;   456 zł	;a
 Miejscowe;Lemir;Żaróweczka;blabablab;	5 zł	;b
 Ozdobne;Hesmo;Reflektor;balbablalbalbl;	56 zł	;c
 Miejscowe;Lemir;Żaróweczka;blabablab;	7 zł	;b
 Ozdobne;Hesmo;Reflektor;balbablalbalbl;	5 zł	;c
+Szamanie;Lemir;Super lampa;blablbabsa;   456 zł	;a
 Ozdobne;Osram;Reflektor;balbablalbalbl;	9 zł	;c
 Ozdobne;Lemir;Reflektor;balbablalbalbl;	458 zł	;c
 Ogólne;Osram;Super lampa;blablbabsa;	34 zł	;a
 Ogólne;Osram;Super lampa;blablbabsa;	54 zł	;a
 Ogólne;Hesmo;Super lampa;blablbabsa;	43 zł	;a
 Ogólne;Lemir;Super lampa;blablbabsa;   456 zł	;a
+Szamanie;Lemir;Super lampa;blablbabsa;   456 zł	;a
+Szamanie;Lemir;Super lampa;blablbabsa;   456 zł	;a
+Szamanie;Lemir;Super lampa;blablbabsa;   456 zł	;a
+Szamanie;Lemir;Super lampa;blablbabsa;   456 zł	;a

@@ -1,0 +1,15 @@
+ID_towar;Typ;Producent;Nazwa;Opis;Cena
+1;Ogólne;Osram;Super lampa;blablbabsa;122 zł
+2;Miejscowe;Lemir;Żaróweczka;blabablab;2 zł
+3;Ozdobne;Hesmo;Reflektor;balbablalbalbl;3 zł
+4;Miejscowe;Osram;Żaróweczka;blabablab;12 zł
+5;Miejscowe;Lemir;Żaróweczka;blabablab;5 zł
+6;Ozdobne;Hesmo;Reflektor;balbablalbalbl;56 zł
+7;Miejscowe;Lemir;Żaróweczka;blabablab;7 zł
+8;Ozdobne;Hesmo;Reflektor;balbablalbalbl;5 zł
+9;Ozdobne;Osram;Reflektor;balbablalbalbl;9 zł
+10;Ozdobne;Lemir;Reflektor;balbablalbalbl;458 zł
+11;Ogólne;Osram;Super lampa;blablbabsa;34 zł
+12;Ogólne;Osram;Super lampa;blablbabsa;54 zł
+13;Ogólne;Hesmo;Super lampa;blablbabsa;43 zł
+14;Ogólne;Lemir;Super lampa;blablbabsa;456 zł

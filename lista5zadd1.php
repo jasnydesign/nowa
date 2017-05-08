@@ -36,7 +36,6 @@
 
 
 				}
-$zbyszek = true;
  ?>
 
 <section class="formularz">
@@ -52,8 +51,8 @@ $zbyszek = true;
 
 							<?php foreach ( $rowsTable as $row ): ?>
 								<?php foreach ($row as $column => $komorka): ?>
-
-											<?php 
+											
+											<?php $zbyszek = true; 
 												$do = count($zapis);
 												for ($i=0; $i < $do; $i++) { 
 													if ($zapis[$i] == $komorka) {
@@ -80,11 +79,10 @@ $zbyszek = true;
 					<div class="col-md-4">
 						<select  class="input-text" name="producent" id="producent" required>
 							<option value"">Producent</option>
-							<?php $dalej = true; ?>
 							<?php foreach ( $rowsTable as $row ): ?>
 								<?php foreach ($row as $column => $komorka): ?>
-
-											<?php 
+											
+											<?php $dalej = false;
 												$do = count($zapis2);
 												for ($i=0; $i < $do; $i++) { 
 													if ($zapis2[$i] == $komorka) {
