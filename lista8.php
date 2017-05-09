@@ -5,7 +5,7 @@
 $host='localhost';
 $user='jasny';
 $psw='1234';
-$db='lista7';
+$db='shop';
 $connection=mysql_connect($host,$user,$psw);
 mysql_set_charset('utf8',$connection);
 if(!$connection || !mysql_select_db($db,$connection)){
@@ -23,17 +23,28 @@ $lista_towaru2 = mysql_fetch_array($lista_towaru);
 	<div class="container">
 	<h2>Dodaj towar:</h2>
 		<div class="form">
-			<form  method="post" action="lista7.php" enctype="multipart/form-data">
+			<form  method="post" action="lista8.php" enctype="multipart/form-data">
 			<?php define('MAX_SIZE', 20000000); ?>
 			<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo "MAX_SIZE"; ?>">
 				<div class="row">
 					<div class="col-md-2"><input class="input-text" type="text" name="typ_dodaj" id="typ_dodaj"  placeholder="Typ *"></div>
 					<div class="col-md-2"><input class="input-text" type="text" name="producent_dodaj" id="producent_dodaj"  placeholder="Producent *"></div>
 					<div class="col-md-2"><input class="input-text" type="text" name="nazwa_dodaj" id="nazwa_dodaj"  placeholder="Nazwa *"></div>
-					<div class="col-md-3"><input class="input-text" type="textarea" name="opis_dodaj" id="opis_dodaj"  placeholder="Opis *"></div>
-					<div class="col-md-1"><input class="input-text" type="text" name="cena_dodaj" id="cena_dodaj"  placeholder="Cena *"></div>
-					<div class="col-md-2"><input class="input-text" type="file" name="zdj_dodaj" id="zdj_dodaj"  placeholder="Zdjęcie *"></div>
+					<div class="col-md-4"><input class="input-text" type="textarea" name="opis_dodaj" id="opis_dodaj"  placeholder="Opis *"></div>
+					<div class="col-md-2"><input class="input-text" type="text" name="cena_dodaj" id="cena_dodaj"  placeholder="Cena *"></div>
 				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<label for="galeria_dodaj">Dodaj galerię:
+							<input class="input-text" type="file" name="galeria_dodaj[]" id="galeria_dodaj" multiple="multiple"  placeholder="Zdjęcie *">
+						</label>
+					</div>			
+					<div class="col-md-4">
+						<label for="zdj_dodaj">Dodaj zdjęcie pokazywane w miniaturce:
+							<input class="input-text" type="file" name="zdj_dodaj" id="zdj_dodaj"  placeholder="Zdjęcie *">
+						</label>
+					</div>								
+				</div>				
 
 			    <input class="input-btn" type="submit" name="submit2" value="Dodaj towar">
 			    <input class="input-btn" type="reset" name="reset" value="Resetuj pola">
@@ -42,6 +53,9 @@ $lista_towaru2 = mysql_fetch_array($lista_towaru);
 		</div>
 	</div>	
 </section>
+
+
+
 
 <?php 
 if (isset($_POST['typ_dodaj'])) {
@@ -62,7 +76,6 @@ if (isset($_POST['cena_dodaj'])) {
 if (isset($_FILES['zdj_dodaj'])) {
 	$zdj_dodaj = $_FILES['zdj_dodaj']["name"];
 
-
 $target_dir = "images/upload-images/";
 $target_file = $target_dir . basename($_FILES["zdj_dodaj"]["name"]);
 $uploadOk = 1;
@@ -78,11 +91,7 @@ if(isset($_POST["submit2"]) && isset($_FILES['file']) ) {
         $uploadOk = 0;
     }
 }
-// Check if file already exists
-if (file_exists($target_file)) {
-    echo "Przepraszamy, plik już istnieje na serwerze.";
-    $uploadOk = 0;
-}
+
 // Check file size
 if ($_FILES["zdj_dodaj"]["size"] > MAX_SIZE) {
     echo "Przepraszamy, Twój plik jest za duży.";
@@ -109,30 +118,49 @@ if ($uploadOk == 0) {
 
 
 }
+
 if (isset($_POST['typ_dodaj']) && (isset($_POST['submit2']))) {
 	
-	$dodaj = mysql_query("INSERT INTO `lista towarów`(`Typ`, `Producent`, `Nazwa`, `Opis`, `Cena`,`Zdjęcie`) VALUES ('$typ_dodaj','$producent_dodaj','$nazwa_dodaj','$opis_dodaj','$cena_dodaj','$zdj_dodaj')");
+	$dodaj = mysql_query("INSERT INTO `lista towarów`(`Typ`, `Producent`, `Nazwa`, `Opis`, `Cena`,`Zdjecie`) VALUES ('$typ_dodaj','$producent_dodaj','$nazwa_dodaj','$opis_dodaj','$cena_dodaj','$zdj_dodaj')");
+}
+
+if (isset($_FILES['galeria_dodaj'])) {
+	$galeria_dodaj = $_FILES['galeria_dodaj']["name"];
+
+
+$ID_towar_zdj = mysql_insert_id();
+
+
+if(isset($_FILES['galeria_dodaj'])){
+    $name_array = $_FILES['galeria_dodaj']['name'];
+    $tmp_name_array = $_FILES['galeria_dodaj']['tmp_name'];
+    $type_array = $_FILES['galeria_dodaj']['type'];
+    $size_array = $_FILES['galeria_dodaj']['size'];
+    $error_array = $_FILES['galeria_dodaj']['error'];
+    for($i = 0; $i < count($tmp_name_array); $i++){
+    	$dodaj_zdjecia = mysql_query("INSERT INTO `zdjecia` (`ID_zdj`, `Link`, `ID_towar`) VALUES (NULL, '$name_array[$i]', '$ID_towar_zdj');");
+        if(move_uploaded_file($tmp_name_array[$i], "images/upload-images/".$name_array[$i])){
+            echo $name_array[$i]." upload is complete<br>";
+        } else {
+            echo "move_uploaded_file function failed for ".$name_array[$i]."<br>";
+        }
+    }
 }
 
 
-
-
-
-
-
-
-
-
-
+}
 
 
  ?>
+
+
+
 
 <section class="formularz">
 	<div class="container">
 	<h2>Edytuj towar:</h2>
 		<div class="form">
-			<form enctype="multipart/form-data" method="post" action="lista7.php">
+			<form enctype="multipart/form-data" method="post" action="lista8.php">
 			<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo "MAX_SIZE"; ?>">
 
 				<div class="row">
@@ -252,7 +280,7 @@ $zbyszek = true;
 	<div class="container">
 	<h1 >Lista towarów:</h1>
 		<div class="form">
-			<form enctype="multipart/form-data" method="post" action="lista7.php">
+			<form enctype="multipart/form-data" method="post" action="lista8.php">
 			<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo "MAX_SIZE"; ?>">
 				<div class="row">
 					<div class="col-md-4">
@@ -376,7 +404,7 @@ if (isset($_POST['kolumna'])) {
 <?php if (isset($_POST['submit'])) { ?>
 	<section class="oferta">
 		<div class="container">
-			<ul class="lista_oferta">
+			<table class="lista_oferta">
 				<?php
 
 
@@ -405,30 +433,109 @@ if (isset($_POST['kolumna'])) {
 						$lista_towaru2 = mysql_fetch_array($lista_towaru); 				    	
 				    } ?>		
 					    
-	
+
  
 					<?php $numFields = mysql_num_fields($lista_towaru); ?>
-					<?php for ( $i = 0; $i < $numFields; $i++ ) { ?>
-						<?php if ( $i == 4 ){ ?>
-							<li class="col-md-2 col-xs-2 text-center "><b><?php echo (mysql_field_name($lista_towaru, $i)); ?></b></li> 
-						<?php } elseif (($i == 0) || ($i == 5)) { ?>
-							<li class="col-md-1 col-xs-1 text-center "><b><?php echo (mysql_field_name($lista_towaru, $i)); ?></b></li> 
-						<?php } else { ?>
-							<li class="col-md-2 col-xs-2 text-center "><b><?php echo (mysql_field_name($lista_towaru, $i)); ?></b></li> 
-						<?php } ?>
-					<?php } ?>
- 
+					<tr>	
+						<?php for ( $i = 0; $i < $numFields; $i++ ) { ?>
+							<?php if ( $i == 4 ){ ?>
+								<th class="col-md-2 col-xs-2 text-center "><b><?php echo (mysql_field_name($lista_towaru, $i)); ?></b></th> 
+							<?php } elseif (($i == 0) || ($i == 5) || ($i == 0) ) { ?>
+								<th class="col-md-1 col-xs-1 text-center "><b><?php echo (mysql_field_name($lista_towaru, $i)); ?></b></th> 
+							<?php } else { ?>
+								<th class="col-md-2 col-xs-2 text-center "><b><?php echo (mysql_field_name($lista_towaru, $i)); ?></b></th> 
+							<?php } ?>
+						<?php } ?>		
+						<th class="col-md-1 col-xs-1 text-center ">Zobacz więcej</th>			
+					</tr>
 
-					<?php do { ?>
+
+					<?php do {  $ID_towar_zdj = $lista_towaru2['ID_towar']; ?> 
+					<tr>
 						<?php if (($producent_form == "Producent") && ($typ_form == "Typ oświetlenia")): ?>
-								<li class="col-md-1 col-xs-1 text-center "><?php echo $lista_towaru2['ID_towar'] ?></li>
-								<li class="col-md-2 col-xs-2 text-center "><?php echo $lista_towaru2['Typ'] ?></li>
-								<li class="col-md-2 col-xs-2 text-center "><?php echo $lista_towaru2['Producent'] ?></li>	
-								<li class="col-md-2 col-xs-2 text-center "><?php echo $lista_towaru2['Nazwa'] ?></li>
-								<li class="col-md-2 col-xs-2 text-center "><?php echo $lista_towaru2['Opis'] ?></li>
-								<li class="col-md-1 col-xs-1 text-center "><?php echo $lista_towaru2['Cena'] ?> PLN</li>
-								<li class="col-md-2 col-xs-2 text-center li_zdj"><img class="img-thumbnail li_zd" src="images/upload-images/<?php echo $lista_towaru2['Zdjęcie'] ?>" alt=""></li>				
+								<td class="col-md-1 col-xs-1 text-center "><?php echo $lista_towaru2['ID_towar'] ?></td>
+								<td class="col-md-1 col-xs-1 text-center "><?php echo $lista_towaru2['Typ'] ?></td>
+								<td class="col-md-2 col-xs-2 text-center "><?php echo $lista_towaru2['Producent'] ?></td>	
+								<td class="col-md-2 col-xs-2 text-center "><?php echo $lista_towaru2['Nazwa'] ?></td>
+								<td class="col-md-2 col-xs-2 text-center "><?php echo $lista_towaru2['Opis'] ?></td>
+								<td class="col-md-1 col-xs-1 text-center "><?php echo $lista_towaru2['Cena'] ?> PLN</td>
+								<td class="col-md-2 col-xs-2 text-center li_zdj"><img class="img-thumbnail li_zd" src="images/upload-images/<?php echo $lista_towaru2['Zdjecie'] ?>" alt=""></td>
+								<td class="col-md-1 col-xs-1"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<?php echo $ID_towar_zdj; ?>">Szczegóły</button></td>	
+
+
+
+
+								<div id="<?php echo $ID_towar_zdj; ?>" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+								  <div class="modal-dialog modal-lg" role="document">
+								    <div class="modal-content">
+								    <?php 
+									$lista_zdjecia  = mysql_query("SELECT Link FROM zdjecia WHERE ID_towar = $ID_towar_zdj");
+									$lista_zdjecia2 = mysql_fetch_array($lista_zdjecia); 	
+									?>	
+ 									<?php do { ?>
+									<?php } while ( $lista_zdjecia2 = mysql_fetch_array($lista_zdjecia) ); ?>
+
+										<div id="<?php echo $ID_towar_zdj; ?>gene" class="carousel slide" data-ride="carousel">
+										  <!-- Indicators -->
+
+										    <?php 
+											$lista_zdjecia  = mysql_query("SELECT Link FROM zdjecia WHERE ID_towar = $ID_towar_zdj");
+											$lista_zdjecia2 = mysql_fetch_array($lista_zdjecia); 	
+											$a = 1;
+											$b = 0;
+											?>											  
+										  <ol class="carousel-indicators">
+											  <?php do { ?>
+											    <li data-target="#<?php echo $ID_towar_zdj; ?>gene" data-slide-to="<?php echo($b); ?>" class="<?php if ($a == 1) { echo "active"; } ?>"></li>
+											    <?php $a++; $b++; ?>
+											  <?php } while ( $lista_zdjecia2 = mysql_fetch_array($lista_zdjecia) );  ?>	
+										  </ol>
+
+										  <!-- Wrapper for slides -->
+										  <div class="carousel-inner" role="listbox">
+										    <?php 
+											$lista_zdjecia  = mysql_query("SELECT Link FROM zdjecia WHERE ID_towar = $ID_towar_zdj");
+											$lista_zdjecia2 = mysql_fetch_array($lista_zdjecia); 	
+											$it = 1;
+											?>	
+		 									<?php do { ?>
+											    <div class="item <?php if ($it == 1) { echo "active"; } ?>">
+											      <img src="images/upload-images/<?php echo $lista_zdjecia2["Link"]; ?>" alt="...">
+											      <div class="carousel-caption">
+											      	<?php echo $lista_zdjecia2["Link"]; ?>
+											      </div>
+											    </div> <?php $it++; ?>
+											<?php } while ( $lista_zdjecia2 = mysql_fetch_array($lista_zdjecia) );  ?>										  
+
+
+										  </div>
+
+										  <!-- Controls -->
+										  <a class="left carousel-control" href="#<?php echo $ID_towar_zdj; ?>gene" role="button" data-slide="prev">
+										    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+										    <span class="sr-only">Previous</span>
+										  </a>
+										  <a class="right carousel-control" href="#<?php echo $ID_towar_zdj; ?>gene" role="button" data-slide="next">
+										    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+										    <span class="sr-only">Next</span>
+										  </a>
+										</div>
+
+
+
+								    
+
+
+								    </div>
+								  </div>
+								</div>
+
+
+
+
+
 						<?php endif ?>	
+					</tr>
 
 						<?php if (($producent_form != "Producent") && ($typ_form == "Typ oświetlenia")): ?>
 							<?php if ($lista_towaru2['Producent'] == $producent_form): ?>
@@ -438,7 +545,8 @@ if (isset($_POST['kolumna'])) {
 								<li class="col-md-2 col-xs-2 text-center "><?php echo $lista_towaru2['Nazwa'] ?></li>
 								<li class="col-md-2 col-xs-2 text-center "><?php echo $lista_towaru2['Opis'] ?></li>
 								<li class="col-md-1 col-xs-1 text-center "><?php echo $lista_towaru2['Cena'] ?> PLN</li>
-								<li class="col-md-2 col-xs-2 text-center li_zdj"><img class="img-thumbnail li_zd" src="images/upload-images/<?php echo $lista_towaru2['Zdjęcie'] ?>" alt=""></li>
+								<li class="col-md-2 col-xs-2 text-center li_zdj"><img class="img-thumbnail li_zd" src="images/upload-images/<?php echo $lista_towaru2['Zdjecie'] ?>" alt=""></li>
+								<li class="col-md-1"></li>
 													
 							<?php endif ?>					
 						<?php endif ?>		
@@ -451,7 +559,8 @@ if (isset($_POST['kolumna'])) {
 								<li class="col-md-2 col-xs-2 text-center "><?php echo $lista_towaru2['Nazwa'] ?></li>
 								<li class="col-md-2 col-xs-2 text-center "><?php echo $lista_towaru2['Opis'] ?></li>
 								<li class="col-md-1 col-xs-1 text-center "><?php echo $lista_towaru2['Cena'] ?> PLN</li>
-								<li class="col-md-2 col-xs-2 text-center li_zdj"><img class="img-thumbnail li_zd" src="images/upload-images/<?php echo $lista_towaru2['Zdjęcie'] ?>" alt=""></li>
+								<li class="col-md-2 col-xs-2 text-center li_zdj"><img class="img-thumbnail li_zd" src="images/upload-images/<?php echo $lista_towaru2['Zdjecie'] ?>" alt=""></li>
+								<li class="col-md-1"></li>
 													
 							<?php endif ?>					
 						<?php endif ?>	
@@ -459,7 +568,7 @@ if (isset($_POST['kolumna'])) {
 					<?php } while ( $lista_towaru2 = mysql_fetch_array($lista_towaru) ); ?>	
 
 			
-			</ul>
+			</table>
 		</div>
 	</section>
 <?php } ?>
