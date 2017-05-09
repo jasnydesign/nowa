@@ -468,12 +468,6 @@ if (isset($_POST['kolumna'])) {
 								<div id="<?php echo $ID_towar_zdj; ?>" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 								  <div class="modal-dialog modal-lg" role="document">
 								    <div class="modal-content">
-								    <?php 
-									$lista_zdjecia  = mysql_query("SELECT Link FROM zdjecia WHERE ID_towar = $ID_towar_zdj");
-									$lista_zdjecia2 = mysql_fetch_array($lista_zdjecia); 	
-									?>	
- 									<?php do { ?>
-									<?php } while ( $lista_zdjecia2 = mysql_fetch_array($lista_zdjecia) ); ?>
 
 										<div id="<?php echo $ID_towar_zdj; ?>gene" class="carousel slide" data-ride="carousel">
 										  <!-- Indicators -->
@@ -500,9 +494,9 @@ if (isset($_POST['kolumna'])) {
 											?>	
 		 									<?php do { ?>
 											    <div class="item <?php if ($it == 1) { echo "active"; } ?>">
-											      <img src="images/upload-images/<?php echo $lista_zdjecia2["Link"]; ?>" alt="...">
+											      <img class="img-responsive center-block" src="images/upload-images/<?php echo $lista_zdjecia2["Link"]; ?>" alt="...">
 											      <div class="carousel-caption">
-											      	<?php echo $lista_zdjecia2["Link"]; ?>
+											      	<?php /* ?><h2><?php echo $lista_towaru2['Nazwa']; ?></h2><?php */ ?>
 											      </div>
 											    </div> <?php $it++; ?>
 											<?php } while ( $lista_zdjecia2 = mysql_fetch_array($lista_zdjecia) );  ?>										  
@@ -512,16 +506,35 @@ if (isset($_POST['kolumna'])) {
 
 										  <!-- Controls -->
 										  <a class="left carousel-control" href="#<?php echo $ID_towar_zdj; ?>gene" role="button" data-slide="prev">
-										    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+										    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
 										    <span class="sr-only">Previous</span>
 										  </a>
 										  <a class="right carousel-control" href="#<?php echo $ID_towar_zdj; ?>gene" role="button" data-slide="next">
-										    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+										    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
 										    <span class="sr-only">Next</span>
 										  </a>
 										</div>
 
-
+										<div class="dane">
+											<h1><?php echo $lista_towaru2['Nazwa']; ?></h1>
+											<h3>Informacje o produkcie</h3>
+											<div class="row">
+												
+												<div class="col-md-2">
+													<p><b>Typ:</b></p>
+													<?php echo $lista_towaru2['Typ']; ?>
+												</div>
+												<div class="col-md-2">
+													<p><b>Producent:</b></p>
+													<?php echo $lista_towaru2['Producent']; ?></div>
+												<div class="col-md-2">
+													<p><b>Cena:</b></p>
+													<?php echo $lista_towaru2['Cena']; ?></div>
+												<div class="col-md-6">
+													<p><b>Opis:</b></p>
+													<?php echo $lista_towaru2['Opis']; ?></div>
+											</div>
+										</div>
 
 								    
 

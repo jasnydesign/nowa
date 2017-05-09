@@ -1057,9 +1057,42 @@ table.lista_oferta td{
     font-size: 18px;
 }
 .modal-content{
-	height: 100%;
-	width: 100%;
-	padding: 20px !important;
 	border-radius: 0px !important; 
 }
+.dane{
+	padding: 20px;
+}
+.item{
+	height: 550px !important;
+}
+.item img{
+	height: 100% !important;
+}
+.carousel-control.right,.left {
+	background: inherit !important;
+}
 
+.glyphicon.glyphicon-menu-left, .glyphicon.glyphicon-menu-right{
+	top: 50% !important;
+	font-size: 50px !important;
+	color: grey;
+}
+ol.carousel-indicators li{
+	display: inline-block;
+    width: 20px;
+    height: 4px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: grey !important;
+    border: 1px solid grey !important;
+    border-radius: 0px;
+    transition: all .3s;
+}
+.carousel-indicators .active{
+	width: 20px !important;
+    height: 15px !important;
+    margin: 0;
+    background-color: #7d7d7d !important;
+    border: 1px solid #7d7d7d !important;
+}
